@@ -1,0 +1,3 @@
+[submodule "tp-link-cve"]
+	path = tp-link-cve
+	url = git@github.com:Chapoly1305/tp-link-cve.git
