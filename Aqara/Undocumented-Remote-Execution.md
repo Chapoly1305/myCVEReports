@@ -1,6 +1,6 @@
 # CVE-XXXX-XXXXX
 
-Aqara Hub devices contain an undocumented remote access mechanism enabling unrestricted remote command execution.
+Aqara Hub and Camera Hub devices contain an undocumented remote access mechanism ("backdoor") enabling unrestricted remote command execution.
 
 **Keywords:** Remote Code Execution, Unauthorized Access
 
@@ -96,14 +96,23 @@ All commands are processed without authentication beyond CoAP encryption and gen
 
 Vector: AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
 
-## Timeline
-- **July 3, 2025**: Reported to Aqara
-- **October 10, 2025**: Vendor responded mitigation schedule.
 
-## Vendor Responded Fix Versions
-- Hub M2: Firmware V4.3.8, OTA released August 28, 2025
-- Hub M3: Firmware V4.3.8, OTA released August 28, 2025
-- Camera Hub G3: Compatible firmware version, OTA released October 20, 2025
+
+# Regression Testing Result
+
+Aqara never responded to my inquiry about the precise software release version. Therefore, I conducted a regression test using the file `20250828112804_lumi.gateway.iragl5_AIOT_V4.3.8_0021.0652_20250826_f93a71.bin`, which has a sha256sum of `64672529e3545d887241a5d069f9757fe02a87e128af8d3cc1c7f78fd32c8fab`. This file is the latest available for M2 Hub that I could find, and its date matches the expectation provided by Aqara in an earlier email. 
+
+The illustration below illustrates how they “patch” it, code reconstructed from assembly and truncated for ease of understand. Instead of eliminating this “backdoor,” they simply added a few easy-to-bypass filtering mechanisms. If you’re interested, you can check `ha_master@0x7A0384`.
+
+![image-20251123141855156](imgs/image1.png)
+
+
+
+## Timeline
+
+- **July 3, 2025**: Reported to Aqara
+- **October 10, 2025**: Vendor responded mitigation schedule. Hub M2: Firmware V4.3.8, OTA released August 28, 2025; Hub M3: Firmware V4.3.8, OTA released August 28, 2025; Camera Hub G3: Compatible firmware version, OTA released October 20, 2025.
+- **October 27,2025**: the regression testing failed (as mentioned earlier). Inquired about the patching version clarification from Aqara, but I didn’t receive a response. 
 
 ## Credits
 Junming Chen (George Mason University)
