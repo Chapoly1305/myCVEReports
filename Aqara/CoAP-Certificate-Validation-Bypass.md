@@ -1,4 +1,4 @@
-# CVE-XXXX-XXXXX
+# CVE-2025-65291
 Aqara Hub devices fail to validate server certificates in TLS connections for discovery services and CoAP gateway communications, enabling man-in-the-middle attacks on device control and monitoring.
 
 **Keywords:** Certificate Validation Bypass, Man-in-the-Middle, TLS Security Failure, CoAP Security, CWE-295: Improper Certificate Validation
