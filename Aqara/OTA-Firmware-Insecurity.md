@@ -1,4 +1,4 @@
-# CVE-XXXX-XXXXX
+# CVE-2025-65295
 
 Multiple security vulnerabilities in Aqara Hub OTA firmware update process allow signature verification bypass, use weak cryptography, and leak uninitialized memory in firmware headers.
 
