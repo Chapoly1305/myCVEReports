@@ -1,4 +1,4 @@
-# CVE-XXXX-XXXXX
+# CVE-2025-65292
 
 Command injection vulnerability in Aqara Hub devices (Camera Hub G3, Hub M2, and Hub M3) allows attackers to execute arbitrary commands with root privileges through malicious domain names.
 
