@@ -1,4 +1,4 @@
-# CVE-XXXX-XXXXX
+# CVE-2025-65294
 
 Aqara Hub and Camera Hub devices contain an undocumented remote access mechanism ("backdoor") enabling unrestricted remote command execution.
 
