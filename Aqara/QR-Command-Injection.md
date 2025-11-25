@@ -1,4 +1,4 @@
-# CVE-XXXX-XXXXX
+# CVE-2025-65293
 
 Command injection vulnerabilities in Aqara Camera Hub G3 allow attackers to execute arbitrary commands with root privileges through malicious QR codes during device setup and factory reset.
 
