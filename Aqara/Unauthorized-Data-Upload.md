@@ -1,4 +1,4 @@
-# CVE-XXXX-XXXXX
+# CVE-2025-65297
 
 Aqara Hub devices automatically collect and upload sensitive user data without disclosure or consent.
 
