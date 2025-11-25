@@ -1,4 +1,4 @@
-# CVE-XXXX-XXXXX
+# CVE-2025-65296
 
 Widespread NULL pointer dereference vulnerabilities in Aqara Hub JSON processing enable denial-of-service attacks through malformed JSON inputs.
 
