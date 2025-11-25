@@ -1,4 +1,4 @@
-# CVE-XXXX-XXXXX
+# CVE-2025-65290
 
 Aqara Hub devices fail to validate server certificates during HTTPS firmware downloads, allowing man-in-the-middle attackers to intercept firmware update traffic and potentially serve modified firmware files.
 
