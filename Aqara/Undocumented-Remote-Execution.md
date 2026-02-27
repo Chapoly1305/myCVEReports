@@ -14,8 +14,6 @@ The main command handler is located at `sub_767E70` in the `ha_master` binary, e
 
 ### Command Execution Methods
 
-**Critical Security Commands:**
-
 1. **system_command** (ha_master:768424-7684f8)
    - Executes arbitrary system commands **synchronously (blocking)**
    - **Captures and returns command output** in JSON result field
@@ -98,13 +96,33 @@ Vector: AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
 
 
 
-# Regression Testing Result
+## Regression Testing Results (Follow-up)
 
-Aqara never responded to my inquiry about the precise software release version. Therefore, I conducted a regression test using the file `20250828112804_lumi.gateway.iragl5_AIOT_V4.3.8_0021.0652_20250826_f93a71.bin`, which has a sha256sum of `64672529e3545d887241a5d069f9757fe02a87e128af8d3cc1c7f78fd32c8fab`. This file is the latest available for M2 Hub that I could find, and its date matches the expectation provided by Aqara in an earlier email. 
 
-The illustration below illustrates how they “patch” it, code reconstructed from assembly and truncated for ease of understand. Instead of eliminating this “backdoor,” they simply added a few easy-to-bypass filtering mechanisms. If you’re interested, you can check `ha_master@0x7A0384`.
+Our recent regression testing indicates that remediation has been applied to some products by removing the routines associated with `system_run` and `system_command` handlers. However, not all affected models appear to have been remediated in this way. The published CVE report includes our observations and a counterexample illustrating incomplete remediation.
 
-![image-20251123141855156](imgs/image1.png)
+Based on transition behavior across firmware versions, we classify models into three categories:
+
+- **Fixed**: The issue appears in earlier versions, but a later stable firmware version no longer contains the issue.
+- **Not fixed**: The issue appears and remains present in all later stable versions tested.
+
+### Fixed
+- **E1**: introduced at `3.4.4`; removed from `>= 4.1.8`.
+- **G3**: introduced at `3.4.4`; removed from `>= 4.1.8`.
+- **M1S2**: introduced at `4.1.0`; removed from `>= 4.1.9`.
+- **M1S22**: introduced at `4.0.2`; removed from `>= 4.1.8`.
+- **M2PoE**: introduced at `4.0.2`; removed from `>= 4.1.8`.
+- **M3**: introduced at `4.0.8`; removed from `>= 4.1.7`.
+
+### Not fixed
+- **G2HPro**: introduced at `4.3.8`; not removed.
+- **G4**: introduced at `4.0.6`; not removed.
+- **H1**: introduced at `3.5.0`; not removed.
+- **M1S**: introduced at `3.4.4`; not removed.
+- **M2**: introduced at `3.4.4`; not removed.
+- **P3**: introduced at `3.5.0`; not removed.
+- **lumi.aircondition.acn05**: introduced at `4.3.8`; not removed.
+
 
 
 
@@ -116,6 +134,9 @@ The illustration below illustrates how they “patch” it, code reconstructed f
 
 ## Credits
 Junming Chen (George Mason University)
+
 Xiaoyue Ma (George Mason University)
+
 Lannan Lisa Luo, Ph.D. (George Mason University)
+
 Qiang Zeng, Ph.D. (George Mason University)
