@@ -61,4 +61,3 @@ Users and administrators should reduce exposure immediately if they rely on Scre
 
 - Investigation notes: `2026-03-19-screensharingd-auth36-srp-loop.md`
 - PoC: `appleauth36_poc.py`
-- Short social draft: `social-post.txt`
