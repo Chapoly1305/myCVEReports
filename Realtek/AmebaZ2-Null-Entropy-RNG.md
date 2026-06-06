@@ -20,7 +20,7 @@ A vulnerability was discovered in the Realtek AmebaZ2 and Ameba D Matter SDK (`a
 
 ## Analysis
 
-**CVSS:3.1 8.1 High**
+**CVSS:3.1 8.7 High**
 
 CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:C/C:H/I:H/A:N
 
