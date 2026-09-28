@@ -1,4 +1,4 @@
-# CVE Pending
+# CVE-2026-78717
 
 Predictable RNG in Realtek AmebaZ2/D Matter SDK caused by `MBEDTLS_TEST_NULL_ENTROPY` enabled in production builds, resulting in deterministic cryptographic output across all affected devices.
 
